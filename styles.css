@@ -1,0 +1,199 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/531/951/621/digital-digital-art-artwork-illustration-minimalism-hd-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    backdrop-filter: blur(0px);
+}
+.container{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background:transparent;
+    backdrop-filter: blur(20px);
+    border:2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(61, 61, 61, 0.1);
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.container .forms{
+    display: flex;
+    align-items: center;
+    height: 440px;
+    background:trans;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+
+
+.container .form{
+    width: 50%;
+    padding: 30px;
+    background:transparent;
+    transition: margin-left 0.18s ease;
+}
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+   background:transparent;
+}
+
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+   
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    background:transparent;
+}
+
+.container.active .forms{
+    height: 600px;
+}
+.container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+    background:transparent;
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color:rgb(255, 255, 255);
+    border-radius: 25px;
+    color:white;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+    color:white;
+   background:transparent;
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ffffff;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    color:#f4f4f4
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: rgb(0, 0, 0);
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    transition: all 0.2s ease;
+    color:white;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: rgb(0, 0, 0);
+}
+
+.input-field i.icon{
+    left: 0;
+    color:white;
+}
+.input-field i.showHidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+    color:white;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    color:white;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+    color:white;
+}
+
+.checkbox-content input{
+    margin-right: 10px;
+    accent-color: rgb(0, 0, 0);
+    color:white;
+}
+
+.form .text{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.form a.text{
+    color:rgb(236, 236, 236);
+    text-decoration: none;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+}
+
+.form .button input{
+    border: none;
+    color: #000000;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover{
+    background-color: rgb(217, 217, 217);
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}
+
