@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="input-field button">
-                   <input type="button" value="Login"> <!-- Changed to button type submit -->
+                   <input type="submit" value="Login"> <!-- Changed to button type submit -->
                     </div>
 
                 </form>
@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="input-field button">
-                    <input type="button" value="Signup"> <!-- Changed to button type submit -->
+                    <input type="submit" value="Signup"> <!-- Changed to button type submit -->
                     </div>
                 </form>
 
@@ -145,6 +145,12 @@
     // You can add further logic here, like saving data or validation
     container.classList.remove("active"); // Switch back to login
   }
+ function signupFunc(event) {
+  event.preventDefault();
+  alert("Signup Successful!");
+  container.classList.remove("active");
+}
+
 </script>
 
 </body>
