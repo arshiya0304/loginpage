@@ -92,55 +92,60 @@
 
 
     <script>
-        const container = document.querySelector(".container"),
-      pwShowHide = document.querySelectorAll(".showHidePw"),
-      pwFields = document.querySelectorAll(".password"),
-      signUp = document.querySelector(".signup-link"),
-      login = document.querySelector(".login-link");
+  const container = document.querySelector(".container"),
+        pwShowHide = document.querySelectorAll(".showHidePw"),
+        pwFields = document.querySelectorAll(".password"),
+        signUp = document.querySelector(".signup-link"),
+        login = document.querySelector(".login-link");
 
-// Show/hide password and change icon
-pwShowHide.forEach(eyeIcon => {
-  eyeIcon.addEventListener("click", () => {
-    pwFields.forEach(pwField => {
-      if (pwField.type === "password") {
-        pwField.type = "text";
-
-        pwShowHide.forEach(icon => {
-          icon.classList.replace("fa-eye-slash", "fa-eye");
-        });
-      } else {
-        pwField.type = "password";
-
-        pwShowHide.forEach(icon => {
-          icon.classList.replace("fa-eye", "fa-eye-slash");
-        });
-      }
+  // Toggle password visibility
+  pwShowHide.forEach(eyeIcon => {
+    eyeIcon.addEventListener("click", () => {
+      pwFields.forEach(pwField => {
+        if (pwField.type === "password") {
+          pwField.type = "text";
+          eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
+        } else {
+          pwField.type = "password";
+          eyeIcon.classList.replace("fa-eye", "fa-eye-slash");
+        }
+      });
     });
   });
-});
 
-// Switch between signup and login forms
-signUp.addEventListener("click", () => {
-  container.classList.add("active");
-});
-login.addEventListener("click", () => {
-  container.classList.remove("active");
-});
+  // Switch between signup and login forms
+  signUp.addEventListener("click", () => container.classList.add("active"));
+  login.addEventListener("click", () => container.classList.remove("active"));
 
-// Login function with event parameter to prevent form reload
-function func(event) {
-  if(event) event.preventDefault();
+  // Login validation function
+  function func(event) {
+    event.preventDefault();
 
-  var email = document.getElementById("username").value.trim();
-  var password = document.getElementById("password").value.trim();
+    const email = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-  if ((email === 'user1' && password === '12345') || (email === 'user2' && password === '54321')) {
-    window.location.assign("home.html");
-  } else {
-    alert("Wrong username or password");
+    // Sample login credentials
+    const users = {
+      user1: "12345",
+      user2: "54321"
+    };
+
+    if (users[email] === password) {
+      window.location.href = "home.html"; // Redirect on success
+    } else {
+      alert("❌ Wrong username or password");
+    }
   }
-}
 
-     </script>
+  // Signup function
+  function signupFunc(event) {
+    event.preventDefault();
+
+    alert("✅ Signup successful! (Demo only)");
+    // You can add further logic here, like saving data or validation
+    container.classList.remove("active"); // Switch back to login
+  }
+</script>
+
 </body>
 </html>
